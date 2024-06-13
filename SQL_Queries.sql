@@ -1,3 +1,5 @@
+select * from [dbo].[pizza_data]
+
 USE [Pizza DB]
 GO
 
@@ -64,14 +66,14 @@ From pizza_data
 group by pizza_name
 order by total_revenue asc 
 
---- Bottom 5 best sellers by Revenue, Total Quantity, Total Orders 
+-- Daily Trend based on weekly basis 
+Select Datename(DW, order_date) AS order_day, 
+Count(Distinct order_id) As total_orders 
+from pizza_data
+group by Datename(DW, order_date)
 
-Select top 5 pizza_name, 
-CAST(SUM(total_price) AS Decimal(10,2)) as total_revenue
-From pizza_sales
-group by pizza_name
-order by total_revenue asc 
-
-
-
-
+-- Trend based on month
+Select Datename(MONTH, order_date) AS order_month, 
+Count(Distinct order_id) As total_orders 
+from pizza_data
+group by Datename(MONTH, order_date)
