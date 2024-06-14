@@ -8,4 +8,7 @@ The data source included a csv file with all the necessary information in one ta
 - Querying the data using SQL;
 - Creating visualizations with Power BI
 
+## Homepage 
+
+![image](https://github.com/svafaeva93/PizzaSales/assets/124627601/3989ec4c-4aeb-4c96-8a47-0b1b76a2f5cd)
 
